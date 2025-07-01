@@ -13,17 +13,30 @@
 // ● When users click on the "+" sign, the sub-links slide up and get hidden. Note: this
 // interactivity only happens on mobile size devices. (Hint: Use jQuery to implement
 // the following feature)
-$(document).ready(function () {
-  let plus = $(".footer-links-wrapper h3");
+// $(document).ready(function () {
+//   let plus = $(".footer-links-wrapper h3");
 
-  plus.on("click", function () {
+//   plus.on("click", function () {
+//     if ($(window).width() < 768) {
+//       console.log(this);
+//       $(this).next("ul").slideToggle();
+//       $(this).toggleClass("expanded");
+//     }
+//   });
+//   console.log($(window).width());
+//   $(window).on("resize", function () {
+//     location.reload();
+//   });
+// });
+
+import $ from "jquery";
+$(document).ready(function () {
+  $(".footer-links-wrapper h3").on("click", function () {
     if ($(window).width() < 768) {
-      console.log(this);
       $(this).next("ul").slideToggle();
       $(this).toggleClass("expanded");
     }
   });
-  console.log($(window).width());
   $(window).on("resize", function () {
     location.reload();
   });
